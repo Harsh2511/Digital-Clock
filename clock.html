@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: white;
+    }
+
+    #container {
+        position: absolute;
+        font-size: 15.56vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: cyan;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+        text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+    }
+
+</style>
+
+<body>
+
+    <div id="container" text>
+    </div>
+
+</body>
+
+<script>
+
+    function time() {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+
+        if (h < 10) {
+            h = "0" + h;
+        }
+
+        if (m < 10) {
+            m = "0" + m;
+        }
+
+        if (s < 10) {
+            s = "0" + s;
+        }
+
+        if (h > 12) {
+            h = h - 12;
+        }
+
+        if (s == 0) {
+            s = 60;
+        }
+
+        var t = h + ":" + m + ":" + s;
+
+        document.getElementById("container").innerHTML = t;
+    }
+
+    setInterval(time, 1000);
+
+</script>
+
+</html>
